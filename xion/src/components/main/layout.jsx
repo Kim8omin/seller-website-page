@@ -3,27 +3,35 @@ import styled from "styled-components";
 import Header from "./header";
 import Nav from "./nav";
 import blackLogo from "../../assets/blackLogo.jpeg";
+import Footer from "./footer";
+import Sns from "./sns";
+import { Link } from "react-router-dom";
 
 const Layout = ({ children }) => {
   return (
     <Contents>
       <Container>
         <Header />
-        <Logo src={blackLogo} alt="logo" />
+        <Link to="/">
+          <Logo src={blackLogo} alt="logo" />
+        </Link>
         <Nav />
       </Container>
       {children}
+      <SnsWrapper>
+        <Sns />
+      </SnsWrapper>
+      <Footer />
     </Contents>
   );
 };
 
 export default Layout;
 
-
-const Contents  = styled.div`
-display: flex;
-flex-direction: column;
-`
+const Contents = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
 
 const Container = styled.div`
   display: flex;
@@ -38,7 +46,6 @@ const Container = styled.div`
   top: 0px; /* 도달했을때 고정시킬 위치 */
   z-index: 10;
 
-
   @media (max-width: 1024px) {
   }
   @media (max-width: 768px) {
@@ -47,6 +54,13 @@ const Container = styled.div`
   @media (max-width: 430px) {
     display: none;
   }
+`;
+
+const SnsWrapper = styled.div`
+  position: fixed;
+  bottom: 10px; /* 원하는 위치로 조절 */
+  left: 10px; /* 원하는 위치로 조절 */
+  z-index: 10;
 `;
 
 const Logo = styled.img`
