@@ -6,12 +6,12 @@ const Nav = () => {
   return (
     <NavContainer>
       <span>
-        <NavLink to={"contact"}>
+        <NavLink to={"/contact"}>
           <NavText>Contact</NavText>
         </NavLink>
       </span>
       <span>
-        <NavLink to={"location"}>
+        <NavLink to={"/location"}>
           <NavText>Location</NavText>
         </NavLink>
       </span>

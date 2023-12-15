@@ -13,6 +13,9 @@ import Main from "./pages/main";
 import Button from "./pages/products/button";
 import Tote from "./pages/products/tote";
 import All from "./pages/products/all";
+import AllProduct from "./pages/products/allProduct";
+import ProductDetails from "./pages/products/productDetails";
+import Error from "./pages/error";
 
 function App() {
   return (
@@ -29,6 +32,22 @@ function App() {
           />
           <Route path="contact" element={<Contact />} />
           <Route path="location" element={<Location />} />
+          <Route
+            path="productDetails/:productId"
+            element={
+              <Layout>
+                <ProductDetails />
+              </Layout>
+            }
+          />
+           <Route
+            path="allProduct"
+            element={
+              <Layout>
+                <AllProduct />
+              </Layout>
+            }
+          />
           <Route
             path="all"
             element={
@@ -53,6 +72,7 @@ function App() {
               </Layout>
             }
           />
+          <Route path="*" element={<Error/>}/>
         </Routes>
       </Suspense>
     </Router>

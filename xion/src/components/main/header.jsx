@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Header = () => {
   const [toggle, setToggle] = useState(false);
@@ -17,9 +17,9 @@ const Header = () => {
           Product
           {toggle && (
             <div id="product-item-wrapper">
-              <Link to="/all">All</Link>
-              <Link to="/button">Button</Link>
-              <Link to="/tote">Shopper Tote</Link>
+              <StyledNavLink to="/all" activeStyle={activeLinkStyle} hoverStyle={hoverLinkStyle}>All</StyledNavLink>
+              <StyledNavLink to="/button" activeStyle={activeLinkStyle} hoverStyle={hoverLinkStyle}>Button</StyledNavLink>
+              <StyledNavLink to="/tote" activeStyle={activeLinkStyle} hoverStyle={hoverLinkStyle}>Shopper Tote</StyledNavLink>
             </div>
           )}
         </HeaderText>
@@ -62,5 +62,26 @@ const HeaderText = styled.h4`
     justify-content: center;
     gap: 5px;
     margin-top: 5px;
+}
+`;
+
+const activeLinkStyle = {
+  color: "yellow", 
+};
+
+const hoverLinkStyle = {
+  color: "yellow", 
+};
+
+const StyledNavLink = styled(NavLink)`
+  text-decoration: none;
+  color: white;
+
+  &:hover {
+    ${hoverLinkStyle};
+  }
+
+  &.active {
+    ${activeLinkStyle};
   }
 `;
