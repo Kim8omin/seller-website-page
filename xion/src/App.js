@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useState } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -13,7 +13,6 @@ import Main from "./pages/main";
 import Button from "./pages/products/button";
 import Tote from "./pages/products/tote";
 import All from "./pages/products/all";
-import AllProduct from "./pages/products/allProduct";
 import ProductDetails from "./pages/products/productDetails";
 import Error from "./pages/error";
 
@@ -37,14 +36,6 @@ function App() {
             element={
               <Layout>
                 <ProductDetails />
-              </Layout>
-            }
-          />
-           <Route
-            path="allProduct"
-            element={
-              <Layout>
-                <AllProduct />
               </Layout>
             }
           />
@@ -72,7 +63,7 @@ function App() {
               </Layout>
             }
           />
-          <Route path="*" element={<Error/>}/>
+          <Route path="*" element={<Error />} />
         </Routes>
       </Suspense>
     </Router>

@@ -29,7 +29,7 @@ const All = () => {
           <div id="item-container" key={p.img}>
             <Link to={`/productDetails/${p.title}`}>
             <img src={p.img} alt="product_img" />
-            <p>{p.title}</p>
+            <h6>{p.title}</h6>
             <p>{p.content}</p>
             </Link>
           </div>
@@ -68,8 +68,22 @@ const ItemWrapper = styled.div`
 
   img {
     width: 250px;
+    border-radius: 0px;
+  }
+
+  h6 {
+    font-size:1.2rem;
+    color: white;
+
+    &:hover {
+      color: yellow;
+    }
   }
   p {
     color: white;
+
+    &:hover {
+      color: yellow;
+    }
   }
 `;

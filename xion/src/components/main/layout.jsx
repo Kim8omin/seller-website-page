@@ -1,21 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Header from "./header";
 import Nav from "./nav";
-import blackLogo from "../../assets/blackLogo.jpeg";
 import Footer from "./footer";
 import Sns from "./sns";
-import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { toggle } from "../../store/slice";
+import blackLogo from "../../assets/blackLogo.jpeg";
 
 const Layout = ({ children }) => {
+  const toggleState = useSelector((state) => state.toggle.value);
+  const dispatch = useDispatch();
+
+  const handleLogoClick = () => {
+    dispatch(toggle());
+    window.location.href = "/";
+  };
+
   return (
     <Contents>
       <Container>
         <Header />
-        <Link to="/">
-          <Logo src={blackLogo} alt="logo" />
-        </Link>
-        <Nav />
+        <Logo src={blackLogo} alt="logo" onClick={handleLogoClick} />
+         <Nav />
       </Container>
       {children}
       <SnsWrapper>
@@ -36,7 +43,6 @@ const Contents = styled.div`
 const Container = styled.div`
   display: flex;
   flex-direction: row;
-  background-color: pink;
   width: 100%;
   margin: 0 auto;
   height: 115px;
@@ -62,7 +68,7 @@ const SnsWrapper = styled.div`
   left: 10px; /* 원하는 위치로 조절 */
   z-index: 10;
 `;
-
 const Logo = styled.img`
   width: 80px;
+  cursor: pointer;
 `;

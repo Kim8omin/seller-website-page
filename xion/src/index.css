@@ -1,4 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+
+
+
+
 
 body, html {
   margin: 0;
@@ -7,12 +11,12 @@ body, html {
   height: 100%;
   overflow-x: hidden;
   overflow-y: scroll;
-  font-family: 'Nanum Gothic', sans-serif;
+  font-family: 'Silkscreen', sans-serif;
   background-color:#231E20;
 }
 
 code {
-  font-family: 'Nanum Gothic', sans-serif;
+  font-family: 'Silkscreen', sans-serif;
 }
 
 
@@ -101,7 +105,7 @@ video {
   padding: 0;
   border: 0;
   font-size: 100%;
-  font: 'Nanum Gothic', sans-serif;
+  font-family: 'Silkscreen', sans-serif;
   vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -120,7 +124,7 @@ section {
 }
 body {
   line-height: 1;
-  font-family: 'Nanum Gothic', sans-serif;
+  font-family: 'Silkscreen', sans-serif;
 }
 ol,
 ul {

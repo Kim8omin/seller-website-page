@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link  } from "react-router-dom";
 
 const Nav = () => {
   return (
@@ -47,11 +47,12 @@ const NavContainer = styled.div`
 const NavLink = styled(Link)`
     text-decoration: none;
 
-    &:hover {
-        color: purple; 
-    }
+   
 `;
 
 const NavText = styled.h4`
   color: white;
+  &:hover {
+    color: yellow; 
+}
 `;
