@@ -1,11 +1,12 @@
 import React from 'react';
+import contact from '../assets/contact.png'
 
 const Contact = () => {
     return (
         <div>
-            <h4>컨택 컴포넌트를 여기에 랜더링합니다.</h4>
+            <img src={contact} alt='contact info'/>
         </div>
     );
-};
+}
 
 export default Contact;

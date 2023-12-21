@@ -1,14 +1,15 @@
-import React from 'react';
-import CompoWrap from '../../styles/compoWrap';
+import { React} from "react";
+
 
 const Fortpolio = () => {
-    return (
-        <CompoWrap>
-            <h4>포트폴리오</h4>
-        </CompoWrap>
-            
-        
-    );
-};
 
+  return (
+    <>
+    <h2>ha ha</h2>
+    </>
+  )
+
+}
+
+  
 export default Fortpolio;

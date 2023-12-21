@@ -1,10 +1,9 @@
-import React, { Suspense, useState } from "react";
+import './App.css';
+import React, { Suspense } from "react";
 import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Link,
-  Switch,
 } from "react-router-dom";
 import Layout from "./components/main/layout";
 import Contact from "./pages/contact";
@@ -15,9 +14,11 @@ import Tote from "./pages/products/tote";
 import All from "./pages/products/all";
 import ProductDetails from "./pages/products/productDetails";
 import Error from "./pages/error";
+import KBrochure from './pages/kBrochure';
 
 function App() {
   return (
+    <div className="app-container">
     <Router>
       <Suspense fallback={<div>loading</div>}>
         <Routes>
@@ -64,9 +65,18 @@ function App() {
             }
           />
           <Route path="*" element={<Error />} />
+          <Route
+            path="brochure"
+            element={
+              <Layout>
+                <KBrochure/>
+              </Layout>
+            }
+          />
         </Routes>
       </Suspense>
     </Router>
+    </div>
   );
 }
 

@@ -15,6 +15,11 @@ const Nav = () => {
           <NavText>Location</NavText>
         </NavLink>
       </span>
+      <span>
+      <NavLink to={"/brochure"}>
+          <NavText style={{fontSize:'12px',textDecoration: 'underline',paddingTop: '5px' }}>한국어 브로셔</NavText>
+        </NavLink>
+      </span>
     </NavContainer>
   );
 };
