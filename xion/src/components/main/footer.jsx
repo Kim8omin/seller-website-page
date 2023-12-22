@@ -13,7 +13,7 @@ const Footer = () => {
               <br />
               대표이사 : 김상엽
               <br />
-              통신판매업신고 : 2023-통신판매자번호
+              사업자신고 : 2023-서울광진-2307
               <br />
               <a href="#">사업자정보 확인 &gt;</a>
             </address>
@@ -26,9 +26,7 @@ const Footer = () => {
   export default Footer;
   
   const FooterLayer = styled.div`
-    max-width: 1440px;
     width: 100%;
-  
     border-top: 1px solid #dddbdb;
     padding-bottom: 30px;
     margin: 0 auto;
@@ -53,10 +51,8 @@ const Footer = () => {
     margin-top: 20px;
   
     display: flex;
-    justify-content: flex-end;
-    div {
-      margin-left: 50px;
-    }
+    justify-content: center;
+    
     @media screen and (max-width: 768px) {
       width: 90vw;
     }

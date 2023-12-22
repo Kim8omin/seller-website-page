@@ -12,7 +12,7 @@ const Sns = () => {
             <img id="insta" src={insta} alt="instagram" />
           </a>
           <a href="#">
-            <img id="kakao" src={kakao} alt="kakao" />
+            <img id="kakao" src={kakao} alt="kakao" width='10px'/>
           </a>
         </div>
       </SnsContent>
@@ -26,7 +26,7 @@ const SnsLayer = styled.div`
   width: 117px;
   height: 34px;
   position: sticky;
-  top: 0px; /* 도달했을때 고정시킬 위치 */
+  top: 0px; 
   z-index: 10;
 
 `;
@@ -44,7 +44,7 @@ const SnsContent = styled.div`
 }
 
   img {
-    width: 2rem;
+    width: 1.3rem;
     margin-left: 20px;
   }
 

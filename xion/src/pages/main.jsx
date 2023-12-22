@@ -5,6 +5,7 @@ import styled from "styled-components";
 import ContactComponent from "../components/main/contactCompo";
 import Feature from "../components/main/feature";
 import Fortpolio from "../components/main/fortpolio";
+import FortpolioTwo from "../components/main/fortpolio2";
 
 const Main = () => {
   return (
@@ -13,6 +14,7 @@ const Main = () => {
       <MovingBar/>
       <Feature />
       <Fortpolio />
+      <FortpolioTwo />
       <ContactComponent />
     </Wrapper>
   );

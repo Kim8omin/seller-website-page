@@ -2,15 +2,15 @@ import { React, useState } from "react";
 import styled from "styled-components";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
-import imageData from "../../assets/carousel_imgData";
+import partnerData from "../../assets/carousel_partner";
 
-const renderSlides = imageData.map((image) => (
+const renderSlides = partnerData.map((image) => (
   <div key={image.alt}>
     <img src={image.url} alt={image.alt} />
   </div>
 ));
 
-const Fortpolio = () => {
+const FortpolioTwo = () => {
   const [currentIndex, setCurrentIndex] = useState();
   function handleChange(index) {
     setCurrentIndex(index);
@@ -19,7 +19,7 @@ const Fortpolio = () => {
   return (
     <CarouselWrapper>
       <H2>
-        <h2>///Apparel Accessories///Goods///Development and Sourcing///</h2>
+        <h2>///Partnership with///</h2>
       </H2>
       <CarouselLayer>
         <Carousel
@@ -27,7 +27,7 @@ const Fortpolio = () => {
           autoPlay={true}
           infiniteLoop={true}
           showThumbs={false}
-          selectedItem={imageData[currentIndex]}
+          selectedItem={partnerData[currentIndex]}
           onChange={handleChange}
         >
           {renderSlides}
@@ -37,7 +37,7 @@ const Fortpolio = () => {
   );
 };
 
-export default Fortpolio;
+export default FortpolioTwo;
 
 const CarouselWrapper = styled.div`
   display: flex;
@@ -50,12 +50,10 @@ const CarouselWrapper = styled.div`
   const H2 = styled.div`
   background-color: white;
   width: 100%;
-  height: 15px;
-  margin: 20px;
+  margin:30px 0px 20px 0px;
 
   h2 {
     text-align: center;
-    font-size: 15px;
   }
 `
 

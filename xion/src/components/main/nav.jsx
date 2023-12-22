@@ -17,7 +17,7 @@ const Nav = () => {
       </span>
       <span>
       <NavLink to={"/brochure"}>
-          <NavText style={{fontSize:'12px',textDecoration: 'underline',paddingTop: '5px' }}>한국어 브로셔</NavText>
+          <NavText style={{fontSize:'12px',textDecoration: 'underline',marginTop: '3px' }}>한국어 브로셔</NavText>
         </NavLink>
       </span>
     </NavContainer>

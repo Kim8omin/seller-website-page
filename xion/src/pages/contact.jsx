@@ -1,12 +1,11 @@
 import React from 'react';
-import contact from '../assets/contact.png'
+import ContactComponent from '../components/main/contactCompo';
+
 
 const Contact = () => {
     return (
-        <div>
-            <img src={contact} alt='contact info'/>
-        </div>
+        <ContactComponent/>
     );
-}
+};
 
 export default Contact;

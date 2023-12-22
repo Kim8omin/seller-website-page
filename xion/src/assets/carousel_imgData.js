@@ -23,11 +23,10 @@ const imageData = [
       url: "/fortImg/fortfolio/p4.png"
     },
   
-    {
-      label: "Image 5",
-      alt: "image5",
-      url: "/fortImg/fortfolio/p5.png"
-    },
   ];
   
-  export default imageData;
+ 
+ 
+  
+  
+  export default imageData
