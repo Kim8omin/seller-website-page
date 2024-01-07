@@ -11,8 +11,6 @@ const Main = () => {
   return (
     <Wrapper>
       <About />
-      <MovingBar/>
-      <Feature />
       <Fortpolio />
       <FortpolioTwo />
       <ContactComponent />

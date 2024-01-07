@@ -1,23 +1,24 @@
 import React from "react";
 import styled from "styled-components";
-import { Link  } from "react-router-dom";
+import { Link } from "react-router-dom";
+import Header from "./header";
 
 const Nav = () => {
   return (
     <NavContainer>
       <span>
+        <NavText>
+          <Header />
+        </NavText>
+      </span>
+      <span>
         <NavLink to={"/contact"}>
-          <NavText>Contact</NavText>
+          <NavText>Contact & Location</NavText>
         </NavLink>
       </span>
       <span>
         <NavLink to={"/location"}>
-          <NavText>Location</NavText>
-        </NavLink>
-      </span>
-      <span>
-      <NavLink to={"/brochure"}>
-          <NavText style={{fontSize:'12px',textDecoration: 'underline',marginTop: '3px' }}>한국어 브로셔</NavText>
+          <NavText>About Us</NavText>
         </NavLink>
       </span>
     </NavContainer>
@@ -50,14 +51,12 @@ const NavContainer = styled.div`
 `;
 
 const NavLink = styled(Link)`
-    text-decoration: none;
-
-   
+  text-decoration: none;
 `;
 
 const NavText = styled.h4`
   color: white;
   &:hover {
-    color: yellow; 
-}
+    color: yellow;
+  }
 `;

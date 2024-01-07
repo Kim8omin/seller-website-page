@@ -12,7 +12,7 @@ const Header = () => {
   const dispatch = useDispatch();
 
   const handleClick = () => {
-    setIsToggleVisible(true);
+    setIsToggleVisible(!isToggleVisible);
     dispatch(toggle());
     console.log (toggleState); 
   };
@@ -48,9 +48,6 @@ const Header = () => {
             </div>
           )}
         </HeaderText>
-      </span>
-      <span id="about-layer">
-        <HeaderText>About</HeaderText>
       </span>
     </HeaderContainer>
    
