@@ -18,9 +18,7 @@ const FortpolioTwo = () => {
 
   return (
     <CarouselWrapper>
-      <H2>
-        <h2>///Partnership with///</h2>
-      </H2>
+      <h2 style={{'textAlign':'center', 'fontSize': '30px', 'margin':'45px', 'fontWeight':'bold'}} >Partner Collaborated Products</h2>
       <CarouselLayer>
         <Carousel
           showArrows={false}
@@ -44,18 +42,9 @@ const CarouselWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 15px;
   margin: 0 auto;
 `
-  const H2 = styled.div`
-  background-color: white;
-  width: 100%;
-  margin:30px 0px 20px 0px;
 
-  h2 {
-    text-align: center;
-  }
-`
 
 const CarouselLayer = styled.div`
   width: 100%

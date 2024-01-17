@@ -14,7 +14,7 @@ import Tote from "./pages/products/tote";
 import All from "./pages/products/all";
 import ProductDetails from "./pages/products/productDetails";
 import Error from "./pages/error";
-import KBrochure from './pages/kBrochure';
+
 
 function App() {
   return (
@@ -69,7 +69,7 @@ function App() {
             path="brochure"
             element={
               <Layout>
-                <KBrochure/>
+               
               </Layout>
             }
           />
