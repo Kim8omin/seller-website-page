@@ -1,29 +1,23 @@
 import React from "react";
 import styled from "styled-components";
-import { useSelector, useDispatch } from "react-redux";
-import { toggle } from "../../store/slice";
-import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import { useToggle } from "../../context/ToggleContext";
 
 
-const Header = () => {
-  const [isToggleVisible, setIsToggleVisible] = useState(false);
-  const toggleState = useSelector((state) => state.toggle.value);
-  const dispatch = useDispatch();
+const Header = (props) => {
+  const { toggle, isToggleVisible } = useToggle(); 
+ 
 
-  const handleClick = () => {
-    setIsToggleVisible(!isToggleVisible);
-    dispatch(toggle());
-    console.log (toggleState); 
-  };
 
   return (
+   
     <HeaderContainer>
-      <span id="product-layer" onClick={handleClick}>
+      <span id="product-layer" onClick={toggle}>
         <HeaderText>
           Product
-          {isToggleVisible && (
-            <div id="product-item-wrapper">
+          
+            <div id="product-item-wrapper"
+            className={isToggleVisible ? "active":""}>
               <StyledNavLink
                 to="/all"
                 activeStyle={activeLinkStyle}
@@ -32,25 +26,38 @@ const Header = () => {
                 All
               </StyledNavLink>
               <StyledNavLink
-                to="/button"
+                to="/buttons"
                 activeStyle={activeLinkStyle}
                 hoverStyle={hoverLinkStyle}
               >
-                Button
+                Buttons
               </StyledNavLink>
               <StyledNavLink
-                to="/tote"
+                to="/buckles"
                 activeStyle={activeLinkStyle}
                 hoverStyle={hoverLinkStyle}
               >
-                Shopper Tote
+                Buckles
+              </StyledNavLink>
+              <StyledNavLink
+                to="/accessories"
+                activeStyle={activeLinkStyle}
+                hoverStyle={hoverLinkStyle}
+              >
+                Clothing Accessories
+              </StyledNavLink>
+              <StyledNavLink
+                to="/goods"
+                activeStyle={activeLinkStyle}
+                hoverStyle={hoverLinkStyle}
+              >
+                Goods
               </StyledNavLink>
             </div>
-          )}
+          
         </HeaderText>
       </span>
     </HeaderContainer>
-   
  
   );
 };
@@ -66,9 +73,8 @@ const hoverLinkStyle = {
 };
 
 const HeaderContainer = styled.div`
-  padding-top:15px;
-  padding-left:30px;
-  width:100%;
+  padding-left: 30px;
+  width: 100%;
   margin: 0 auto;
   height: 35px;
   display: flex;
@@ -76,7 +82,6 @@ const HeaderContainer = styled.div`
   justify-content: center;
   gap: 20px;
 
-  
   @media (max-width: 1024px) {
   }
   @media (max-width: 768px) {
@@ -96,12 +101,30 @@ const HeaderText = styled.h4`
   }
 
   #product-item-wrapper {
-    font-size: 12.5px;
+    max-height: 0px;
+    height: 100vh;
+    width: 50vw;
+    overflow: hidden;
+    transition:max-height 0.58s ease-out;
+    font-size: 14px;
+    padding: 10px;
+    position: absolute; 
+    top: 100%; 
+    background-color: rgba(0,0,0,0.5); 
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 5px;
-    margin-top: 10px;
+    flex-direction: column; 
+    justify-content: flex-start;
+    gap: 20px;
+    opacity: 0; 
+    pointer-events: none; 
+ 
+
+    &.active {
+     max-height: 100vh;
+     opacity: 1; 
+     pointer-events: auto;
+    
+    }
   }
 `;
 
@@ -117,4 +140,3 @@ const StyledNavLink = styled(NavLink)`
     ${activeLinkStyle};
   }
 `;
-

@@ -49,7 +49,7 @@ const ContactComponent = () => {
 
 export default ContactComponent;
 
-const ContactCompoWrap = styled.div`
+export const ContactCompoWrap = styled.div`
   display: flex;
   flex-direction: column;
   background-color: #c8cbd6;

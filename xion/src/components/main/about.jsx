@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import main_button from "../../assets/main_button.png";
 import Button from "../../styles/Button"
+import { Link } from "react-router-dom";
 
 const About = () => {
   return (
@@ -21,7 +22,9 @@ const About = () => {
             <br/>
             we bring a wealth of expertise to the table. Our meticulous attention to detail promises to enhance your brand value in a reasonable manner.
             </p>
+            <StyledLink to={"/contact"}>
             <Button>Contact Us</Button>
+            </StyledLink>
           </ParagraphLayout>
         </ImageContainer>
       </PageLayout>
@@ -63,4 +66,8 @@ const ParagraphLayout = styled.div`
     font-weight: bold;
   }
 
+`;
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
 `;

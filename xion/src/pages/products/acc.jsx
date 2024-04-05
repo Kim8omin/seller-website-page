@@ -3,9 +3,7 @@ import { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-const All = () => {
-  const [selectedCategory, setSelectedCategory] = useState("all");
-
+const Acc = () => {
   const [products, setProducts] = useState([
     { img: "", title: "", content: "" },
   ]);
@@ -24,26 +22,12 @@ const All = () => {
       });
   }, []);
 
-  const filteredProducts =
-    selectedCategory === "all"
-      ? products
-      : products.filter((product) => product.category === selectedCategory);
+  const filteredProducts = products.filter(
+    (product) => product.category === "others"
+  );
 
   return (
     <ProductsWrapper>
-      <CategoryButtons>
-        <button onClick={() => setSelectedCategory("all")}>| ALL |</button>
-        <button onClick={() => setSelectedCategory("button")}>
-          | BUTTONS |
-        </button>
-        <button onClick={() => setSelectedCategory("buckle")}>
-          | BUCKLES |
-        </button>
-        <button onClick={() => setSelectedCategory("others")}>
-          | CLOTHING ACCESSORIES |
-        </button>
-        <button onClick={() => setSelectedCategory("goods")}>| GOODS |</button>
-      </CategoryButtons>
       <ItemWrapper>
         {filteredProducts.map((p) => (
           <div id="item-container" key={p.img}>
@@ -59,7 +43,7 @@ const All = () => {
   );
 };
 
-export default All;
+export default Acc;
 
 const ProductsWrapper = styled.div`
   margin: 70px auto;
@@ -67,19 +51,6 @@ const ProductsWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-`;
-
-const CategoryButtons = styled.div`
-  display: flex;
-  margin-bottom: 50px;
-
-  button {
-    border: none;
-    cursor: pointer;
-    &:hover {
-      color: grey;
-    }
-  }
 `;
 
 const ItemWrapper = styled.div`

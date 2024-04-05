@@ -2,9 +2,15 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import Header from "./header";
+import { useToggle } from "../../context/ToggleContext"
+
 
 const Nav = () => {
+  const { unToggle } = useToggle(); 
+ 
+
   return (
+  
     <NavContainer>
       <span>
         <NavText>
@@ -12,16 +18,17 @@ const Nav = () => {
         </NavText>
       </span>
       <span>
-        <NavLink to={"/contact"}>
+        <NavLink to={"/contact"} onClick={unToggle}>
           <NavText>Contact & Location</NavText>
         </NavLink>
       </span>
       <span>
-        <NavLink to={"/location"}>
+        <NavLink to={"/about"} onClick={unToggle}>
           <NavText>About Us</NavText>
         </NavLink>
       </span>
     </NavContainer>
+  
   );
 };
 

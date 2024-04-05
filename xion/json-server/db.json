@@ -1,74 +1,106 @@
 {
     "products": [
-{
-    "img": "/dataimg/acc1.jpeg",
-    "title": "acc_1",
-    "content":"acc_1"
+{   "id": 0,
+    "img": "/dataimg/Button.jpeg",
+    "title": "Button",
+    "content":"Button for jeans, jackets and others",
+    "category":"button"
 },
-{
-    "img": "/dataimg/acc2.jpeg",
-    "title": "acc_2",
-    "content":"acc_2"
+{   "id": 1,
+    "img": "/dataimg/Button2.jpeg",
+    "title": "Button2",
+    "content":"Button",
+    "category":"button"
 },
-{
-    "img": "/dataimg/acc3.jpeg",
-    "title": "acc_3",
-    "content":"acc_3"
+{   "id": 2,
+    "img": "/dataimg/Button3.jpeg",
+    "title": "Button3",
+    "content":"Button",
+    "category":"button"
 },
-{
-    "img": "/dataimg/acc4.jpeg",
-    "title": "acc_4",
-    "content":"acc_4"
+{   "id": 3,
+    "img": "/dataimg/Button4.jpeg",
+    "title": "Button4",
+    "content":"Button",
+    "category":"button"
 },
-{
-    "img": "/dataimg/bkl1.jpeg",
-    "title": "buckle_1",
-    "content":"buckle_1"
+{   "id": 4,
+    "img": "/dataimg/Buckle.jpeg",
+    "title": "Buckle",
+    "content":"Metal Buckle",
+    "category":"buckle"
 },
-{
-    "img": "/dataimg/bkl2.jpeg",
-    "title": "buckle_2",
-    "content":"buckle_2"
+{   "id": 5,
+    "img": "/dataimg/Buckle2.jpeg",
+    "title": "Buckle2",
+    "content":"Metal Buckle",
+    "category":"buckle"
 },
-{
-    "img": "/dataimg/bkl3.jpeg",
-    "title": "buckle_3",
-    "content":"buckle_3"
+{   "id": 6,
+    "img": "/dataimg/Buckle3.jpeg",
+    "title": "Buckle3",
+    "content":"Metal Buckle",
+    "category":"buckle"
 },
-{
-    "img": "/dataimg/bkl4.jpeg",
-    "title": "buckle_4",
-    "content":"buckle_4"
+{   "id": 7,
+    "img": "/dataimg/Buckle4.jpeg",
+    "title": "Buckle4",
+    "content":"Metal Buckle",
+    "category":"buckle"
 },
-{
-    "img": "/dataimg/bkl5.png",
-    "title": "buckle_5",
-    "content":"buckle_5"
+{   "id": 8,
+    "img": "/dataimg/Buckle5.png",
+    "title": "Buckle5",
+    "content":"Plastic Buckle",
+    "category":"buckle"
 },
-{
-    "img": "/dataimg/btn1.jpeg",
-    "title": "button_1",
-    "content":"button_1"
+{   "id": 9,
+    "img": "/dataimg/Emblem.jpeg",
+    "title": "Emblem",
+    "content":"Metal Emblem",
+    "category":"others"
 },
-{
-    "img": "/dataimg/btn2.jpeg",
-    "title": "button_2",
-    "content":"button_2"
+{   "id": 10,
+    "img": "/dataimg/Goods.jpeg",
+    "title": "Magnetics",
+    "content":"Goods",
+    "category":"goods"
 },
-{
-    "img": "/dataimg/btn3.jpeg",
-    "title": "button_3",
-    "content":"button_3"
+{   "id": 11,
+    "img": "/dataimg/Goods2.jpeg",
+    "title": "Tote bag",
+    "content":"Tote bag",
+    "category":"goods"
 },
-{
-    "img": "/dataimg/btn4.jpeg",
-    "title": "button_4",
-    "content":"button_4"
+{   "id": 12,
+    "img": "/dataimg/Goods3.jpeg",
+    "title": "Tote bag",
+    "content":"Tote bag",
+    "category":"goods"
 },
-{
+{   "id": 13,
+    "img": "/dataimg/Goods4.jpeg",
+    "title": "Tote bag",
+    "content":"Tote bag",
+    "category":"goods"
+},
+{   "id": 14,
+    "img": "/dataimg/Patch.jpeg",
+    "title": "Patch",
+    "content":"Fabric Patch",
+    "category":"others"
+},
+{   "id": 15,
+    "img": "/dataimg/Patch2.jpeg",
+    "title": "Patch2",
+    "content":"Fabric Patch2",
+    "category":"others"
+},
+{   "id": 16,
     "img": "/dataimg/strap.jpeg",
     "title": "strap",
-    "content":"strap"
+    "content":"strap",
+    "category":"others"
 }
 ]
 } 

@@ -1,19 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
-import Header from "./header";
 import Nav from "./nav";
 import Footer from "./footer";
 import Sns from "./sns";
-import { useSelector, useDispatch } from "react-redux";
-import { toggle } from "../../store/slice";
-import namedLogo from "../../assets/namedLogo.png";
+
+import namecard from "../../assets/namecard.png";
 
 const Layout = ({ children }) => {
-  const toggleState = useSelector((state) => state.toggle.value);
-  const dispatch = useDispatch();
-
   const handleLogoClick = () => {
-    dispatch(toggle());
     window.location.href = "/";
   };
 
@@ -21,7 +15,7 @@ const Layout = ({ children }) => {
     <Contents>
       <Container>
         <div className="wrapper">
-          <Logo src={namedLogo} alt="namecard" onClick={handleLogoClick} />
+          <Logo src={namecard} alt="namecard" onClick={handleLogoClick} />
           <NavWrapper>
             <Nav />
           </NavWrapper>

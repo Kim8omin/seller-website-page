@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import arrow from "../../assets/arrow.png";
 import Button from "../../styles/Button";
+import { Link } from "react-router-dom";
 
 const ViewByCard = (props) => {
   return (
@@ -17,19 +18,21 @@ const ViewByCard = (props) => {
           <li className="product-detail">{props.productDetail3}</li>
           <li className="product-detail">{props.productDetail4}</li>
           <div className="button-layer">
-            <Button
-              style={{
-                width: "90%",
-                margin: "55px 0px",
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "center",
-                gap: "10px",
-              }}
-            >
-              <h2>View All</h2>
-              <img src={arrow} alt="arrow" width={20} />
-            </Button>
+            <Link to="/all" style={{ textDecoration: "none" }}>
+              <Button
+                style={{
+                  width: "90%",
+                  margin: "55px 0px",
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "center",
+                  gap: "10px",
+                }}
+              >
+                <h2>View All</h2>
+                <img src={arrow} alt="arrow" width={20} />
+              </Button>
+            </Link>
           </div>
         </ul>
       </CardLayer>

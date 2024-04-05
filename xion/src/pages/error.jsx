@@ -3,7 +3,7 @@ import React from 'react';
 const Error = () => {
     return (
         <div>
-            <h4 style={{color:"white"}}>없는 주소를 입력하였습니다.</h4>
+            <h4 style={{color:"black"}}>The entered address is invalid or does not exist. Please check the address and try again.</h4>
         </div>
     );
 };
