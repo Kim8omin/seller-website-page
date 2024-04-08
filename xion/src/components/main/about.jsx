@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import main_button from "../../assets/main_button.png";
-import Button from "../../styles/Button"
+import Button from "../../styles/Button";
 import { Link } from "react-router-dom";
 
 const About = () => {
@@ -9,7 +9,7 @@ const About = () => {
     <Wrapper>
       <PageLayout>
         <ImageContainer>
-          <img src={main_button} alt="about" width="100%"/>
+          <img src={main_button} alt="about" width="100%" />
           <ParagraphLayout>
             <h2>
               Now is the time
@@ -18,12 +18,16 @@ const About = () => {
               to life
             </h2>
             <p>
-            XION R&D is a specialized company in the production and sourcing of garment accessories, promotional items, accessories, and merchandise giveaways. With years of experience in exporting, 
-            <br/>
-            we bring a wealth of expertise to the table. Our meticulous attention to detail promises to enhance your brand value in a reasonable manner.
+              XION R&D is a specialized company in the production and sourcing
+              of garment accessories, promotional items, accessories, and
+              merchandise giveaways. With years of experience in exporting,
+              <br />
+              we bring a wealth of expertise to the table. Our meticulous
+              attention to detail promises to enhance your brand value in a
+              reasonable manner.
             </p>
             <StyledLink to={"/contact"}>
-            <Button>Contact Us</Button>
+              <Button>Contact Us</Button>
             </StyledLink>
           </ParagraphLayout>
         </ImageContainer>
@@ -53,6 +57,16 @@ const ParagraphLayout = styled.div`
     font-weight: 200;
     font-size: 64px;
     line-height: 75px;
+
+    @media screen and (max-width: 768px) {
+      font-size: 30px;
+      line-height: 30px;
+      min-width: 100%;
+    }
+    @media screen and (max-width: 560px){
+      line-height: 40px;
+
+    }
   }
 
   p {
@@ -60,14 +74,25 @@ const ParagraphLayout = styled.div`
     font-weight: 500;
     font-size: 16px;
     line-height: 24px;
+    @media screen and (max-width: 560px) {
+      display: none;
     }
+  }
 
   span {
     font-weight: bold;
   }
 
+  @media screen and (max-width: 768px) {
+    min-width: 50%;
+  }
+ 
+  }
 `;
 
 const StyledLink = styled(Link)`
   text-decoration: none;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `;

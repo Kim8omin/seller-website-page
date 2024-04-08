@@ -1,23 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import { useToggle } from "../../context/ToggleContext";
 
-
 const Header = (props) => {
-  const { toggle, isToggleVisible } = useToggle(); 
- 
-
+  const { toggle, isToggleVisible } = useToggle();
 
   return (
-   
-    <HeaderContainer>
-      <span id="product-layer" onClick={toggle}>
-        <HeaderText>
-          Product
-          
-            <div id="product-item-wrapper"
-            className={isToggleVisible ? "active":""}>
+    <>
+      <HeaderContainer>
+        <span id="product-layer" onClick={toggle}>
+          <HeaderText>
+            Product
+            <div
+              id="product-item-wrapper"
+              className={isToggleVisible ? "active" : ""}
+            >
               <StyledNavLink
                 to="/all"
                 activeStyle={activeLinkStyle}
@@ -54,11 +52,10 @@ const Header = (props) => {
                 Goods
               </StyledNavLink>
             </div>
-          
-        </HeaderText>
-      </span>
-    </HeaderContainer>
- 
+          </HeaderText>
+        </span>
+      </HeaderContainer>
+    </>
   );
 };
 
@@ -81,21 +78,14 @@ const HeaderContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   gap: 20px;
-
-  @media (max-width: 1024px) {
-  }
-  @media (max-width: 768px) {
-    height: auto;
-  }
-  @media (max-width: 430px) {
-    display: none;
-  }
+  top: 0px;
+  z-index: 10;
 `;
 
 const HeaderText = styled.h4`
   color: white;
 
-  &: hover {
+  &:hover {
     ${hoverLinkStyle};
     cursor: pointer;
   }
@@ -105,25 +95,23 @@ const HeaderText = styled.h4`
     height: 100vh;
     width: 50vw;
     overflow: hidden;
-    transition:max-height 0.58s ease-out;
+    transition: max-height 0.58s ease-out;
     font-size: 14px;
     padding: 10px;
-    position: absolute; 
-    top: 100%; 
-    background-color: rgba(0,0,0,0.5); 
+    position: absolute;
+    top: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     justify-content: flex-start;
     gap: 20px;
-    opacity: 0; 
-    pointer-events: none; 
- 
+    opacity: 0;
+    pointer-events: none;
 
     &.active {
-     max-height: 100vh;
-     opacity: 1; 
-     pointer-events: auto;
-    
+      max-height: 100vh;
+      opacity: 1;
+      pointer-events: auto;
     }
   }
 `;
