@@ -1,15 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
 
 
-body{
-  margin: 0px;
-  padding: 0px;
-  width: 100%;
-  height: 100%;
-}
 
 
-html {
+
+body,html {
   margin: 0px;
   padding: 0px;
   width: 100%;
