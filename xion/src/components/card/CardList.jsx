@@ -2,14 +2,13 @@ import React, { useState, useEffect } from "react";
 import ViewByCard from "./ViewByCard";
 import styled from "styled-components";
 
-
 const CardList = () => {
   const [list, setList] = useState([]);
 
   useEffect(() => {
     const productList = [
       {
-        id:0,
+        id: 0,
         img: "",
         productName: "Buckle",
         productDetail1: "Bags",
@@ -18,8 +17,8 @@ const CardList = () => {
         productDetail4: "Other Supplies",
       },
       {
-        id:1,
-        img:"",
+        id: 1,
+        img: "",
         productName: "Button",
         productDetail1: "Clothing",
         productDetail2: "",
@@ -27,7 +26,7 @@ const CardList = () => {
         productDetail4: "",
       },
       {
-        id:2,
+        id: 2,
         img: "",
         productName: "Goods",
         productDetail1: "Shopping Totes Bags",
@@ -36,7 +35,7 @@ const CardList = () => {
         productDetail4: "",
       },
       {
-        id:3,
+        id: 3,
         img: "",
         productName: "Accessories",
         productDetail1: "Overlock Patches",
@@ -53,6 +52,7 @@ const CardList = () => {
     <CardListLayer>
       {list.map((product) => (
         <ViewByCard
+          key={product.id}
           id={product.id}
           img={product.img}
           productName={product.productName}

@@ -2,6 +2,8 @@ import React from "react";
 import { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { db } from "../../firebase";
+import { collection, getDocs } from "firebase/firestore";
 
 const All = () => {
   const [selectedCategory, setSelectedCategory] = useState("all");
@@ -11,23 +13,40 @@ const All = () => {
   ]);
 
   useEffect(() => {
-    fetch("http://localhost:8001/products")
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        console.log(data);
-        setProducts(data);
-      })
-      .catch((e) => {
-        console.log(e);
-      });
+    const fetchData = async () => {
+      try {
+        const querySnapshot = await getDocs(collection(db, "products"));
+        const dataList = [];
+        querySnapshot.forEach((doc) => {
+          dataList.push({ id: doc.id, ...doc.data() });
+        });
+        setProducts(dataList);
+        console.log(products);
+      } catch (error) {
+        console.error("Error fetching documents: ", error);
+      }
+    };
+
+    fetchData();
   }, []);
+  // useEffect(() => {
+  //   fetch("http://localhost:8001/products")
+  //     .then((response) => {
+  //       return response.json();
+  //     })
+  //     .then((data) => {
+  //       console.log(data);
+  //       setProducts(data);
+  //     })
+  //     .catch((e) => {
+  //       console.log(e);
+  //     });
+  // }, []);
 
   const filteredProducts =
     selectedCategory === "all"
       ? products
-      : products.filter((product) => product.category === selectedCategory);
+      : products?.filter((product) => product?.category === selectedCategory);
 
   return (
     <ProductsWrapper>
@@ -46,11 +65,11 @@ const All = () => {
       </CategoryButtons>
       <ItemWrapper>
         {filteredProducts.map((p) => (
-          <div id="item-container" key={p.img}>
-            <Link to={`/productDetails/${p.title}`}>
-              <img src={p.img} alt="product_img" />
-              <h6>{p.title}</h6>
-              <p>{p.content}</p>
+          <div id="item-container" key={p?.img}>
+            <Link to={`/productDetails/${p?.title}`}>
+              <img src={p?.img} alt="product_img" />
+              <h6>{p?.title}</h6>
+              <p>{p?.content}</p>
             </Link>
           </div>
         ))}

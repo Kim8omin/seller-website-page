@@ -1,7 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import insta from "../../assets/insta.png";
-import kakao from "../../assets/kakao.png";
 
 const Footer = () => {
   return (
@@ -13,8 +11,6 @@ const Footer = () => {
           C.E.O : Sang Yeob Kim
           <br />
           Registered Business number : 2023-서울광진-2307
-          <br />
-          <a href="#">Confirming verified official business documents &gt;</a>
           <br />
           Copyright © 엑스아이오엔 XION R&D. All rights reserved.
         </address>

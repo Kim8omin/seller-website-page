@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import phone from "../../assets/phone.png";
 import location from "../../assets/location.png";
-import envelop from "../../assets/envelop.png";
 import { ContactUs } from "../email/ContactUs";
 
 const ContactComponent = () => {
@@ -17,7 +15,7 @@ const ContactComponent = () => {
       </h2>
       <ContactLayer>
         <ContactWrapper>
-        <ContactUs />
+          <ContactUs />
           <AddressLayer>
             <LocationInfo>
               <Icon src={location} alt="location" />
