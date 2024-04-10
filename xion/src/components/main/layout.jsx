@@ -39,6 +39,7 @@ const Layout = ({ children }) => {
             onClick={onToggle}
             width="25px"
           />
+          <div id="empty-space"></div>
           <span>
             <img
               src={mobileXion}
@@ -47,7 +48,6 @@ const Layout = ({ children }) => {
               width="60px"
             />
           </span>
-          <div id="empty-space"></div>
         </MobileLayer>
         {toggle && <Overlay onClick={onToggle} />}
         {toggle && (
@@ -185,6 +185,9 @@ const MobileLayer = styled.div`
   align-items: center;
   justify-content: space-between;
   text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 
   img {
     cursor: pointer;
@@ -231,12 +234,20 @@ const NavWrapped = styled.div`
 
 const MobileNav = styled.div`
   text-decoration: none;
+  img {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
+  img:hover {
+    transform: scale(1.2);
+  }
 `;
 
 const NavText = styled.h4`
   cursor: pointer;
   color: black;
   &:hover {
-    color: #f9fcf7;
+    color: #74d0fa;
   }
 `;

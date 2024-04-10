@@ -39,33 +39,35 @@ const AboutUs = () => {
       <h2 id="contactSubTitle">
         Our journey to craft qualified garment accessories began
         <br />
-        with our parent company, founded in 1992. 
-        <br/>From there, Xion R&D gained
-        motivation and expanded
+        with our parent company, founded in 1992.
         <br />
-        scope to include various products and goods. We pledge four promises
-        to you.
+        From there, Xion R&D gained motivation and expanded
+        <br />
+        scope to include various products and goods. We pledge four promises to
+        you.
       </h2>
       <PhotoLayer>
         <ul className="contentsLayer">
           {render.map((list, index) => (
-            <li key={index}>
-              <div className="img" height={300}>
-              <img
-                src={`/about${list.id + 1}.jpg`}
-                alt={list.title}
-                width={350}
-                height={300}
-              />
-              </div>
-              <div className="articleLayer">
-                <h3>{list.title}</h3>
-                <p>{list.description}</p>
-              </div>
-            </li>
+            <div className="listWrapper">
+              <li key={index}>
+                <div className="img" height={300}>
+                  <img
+                    src={`/about${list.id + 1}.jpg`}
+                    alt={list.title}
+                    width={350}
+                    height={300}
+                  />
+                </div>
+                <div className="articleLayer">
+                  <h3>{list.title}</h3>
+                  <p>{list.description}</p>
+                </div>
+              </li>
+            </div>
           ))}
         </ul>
-        </PhotoLayer>
+      </PhotoLayer>
     </ContactCompoWrap>
   );
 };
@@ -77,12 +79,19 @@ const PhotoLayer = styled.div`
 .contentsLayer{
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap; 
   align-items: flex-start;
   justify-content: space-evenly;
   margin-top: 35px;
   margin-bottom: 100px;
 }
 
+.listWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 100px;
+}
 
 li {
 display: flex;
@@ -123,4 +132,4 @@ p{
 
 }
 
-`
+`;

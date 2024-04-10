@@ -79,6 +79,9 @@ const CategoryButtons = styled.div`
     &:hover {
       color: grey;
     }
+    @media (max-width: 500px) {
+      width: 50%;
+    }
   }
 `;
 
