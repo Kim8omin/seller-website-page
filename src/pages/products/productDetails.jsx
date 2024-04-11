@@ -9,11 +9,11 @@ const ProductDetails = () => {
     <ProductLayout>
       <h2 style={{ color: "white" }}>Product Detail Image</h2>
       <img
-        src={`/dataimg/${params.productId}.jpeg`}
-        alt={`Product ${params.productId}`}
+        src={`/dataimg/${params.productTitle}.jpeg`}
+        alt={`Product ${params.productTitle}`}
         style={{ maxWidth: "100%" }}
       />
-      <p style={{ color: "white" }}>{params.productId}</p>
+      <p style={{ color: "white" }}>{params.productTitle}</p>
     </ProductLayout>
   );
 };

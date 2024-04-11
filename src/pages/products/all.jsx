@@ -65,8 +65,11 @@ const All = () => {
       </CategoryButtons>
       <ItemWrapper>
         {filteredProducts.map((p) => (
-          <div id="item-container" key={p?.img}>
-            <Link to={`/productDetails/${p?.title}`}>
+          <div id="item-container" key={p?.id}>
+            <Link
+              to={`/productDetails/${p?.title}`}
+              style={{ textDecoration: "none" }}
+            >
               <img src={p?.img} alt="product_img" />
               <h6>{p?.title}</h6>
               <p>{p?.content}</p>

@@ -29,27 +29,32 @@ export const ContactUs = () => {
   };
 
   return (
-      <ContactForm ref={form} onSubmit={sendEmail}>
-        <label>Name</label>
-        <input type="text" name="from_name" placeholder="Name"/>
-        <label>Email</label>
-        <input type="email" name="user_email" placeholder="Please enter your email address"/>
-        <label>Email to</label>
-        <EmailLayer>
+    <ContactForm ref={form} onSubmit={sendEmail}>
+      <label>Name</label>
+      <input type="text" name="from_name" placeholder="Name" />
+      <label>Email</label>
+      <input
+        type="email"
+        name="user_email"
+        placeholder="Please enter your email address"
+      />
+      <label>Email to</label>
+      <EmailLayer>
         <ContactInfo>
-            <Icon src={envelopBlack} alt="envelop" style={{marginLeft:"2px", marginRight:"10px", marginTop:"0"}}/>
-            <p>x-ion@naver.com</p>
-          </ContactInfo>
-          </EmailLayer>
-        <label>Message</label>
-        <textarea name="message" />
-        <input type="submit" value="Send" placeholder="Any inquiry??"/>
-      </ContactForm>
-   
+          <Icon
+            src={envelopBlack}
+            alt="envelop"
+            style={{ marginLeft: "2px", marginRight: "10px", marginTop: "0" }}
+          />
+          <p>x-ion@naver.com</p>
+        </ContactInfo>
+      </EmailLayer>
+      <label>Message</label>
+      <textarea name="message" />
+      <input type="submit" value="Send" placeholder="Any inquiry??" />
+    </ContactForm>
   );
 };
-
-
 
 const ContactForm = styled.form`
   width: 100%;
@@ -87,7 +92,7 @@ const ContactForm = styled.form`
     color: white;
     text-decoration: none;
     text-align: center;
-    margin: auto 0;
+    margin: 0 auto;
     width: 250px;
     padding: 10px; 50px;
     border-radius: 35px;
@@ -97,7 +102,6 @@ const ContactForm = styled.form`
     box-shadow: none;
     border: none; 
     cursor: pointer; 
-    margin-left: auto;
     display:block;
 
     &: hover {
@@ -108,12 +112,12 @@ const ContactForm = styled.form`
 `;
 
 const EmailLayer = styled.div`
-    width: 100%;
-    height: 37px;
-    padding: 10px;
-    margin-bottom: 16px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background-color: white;
-`
+  width: 100%;
+  height: 37px;
+  padding: 10px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+`;
