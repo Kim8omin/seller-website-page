@@ -21,9 +21,14 @@ export const ContactUs = () => {
       .then(
         (result) => {
           console.log(result.text);
+          window.alert(
+            "Message has been sent! we will be touch with you shortly"
+          );
+          form.current.reset();
         },
         (error) => {
           console.log(error.text);
+          window.alert("mail box is full. please contact at xion@naver.com");
         }
       );
   };
