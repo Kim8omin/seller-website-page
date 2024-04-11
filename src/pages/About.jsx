@@ -53,7 +53,7 @@ const AboutUs = () => {
               <li key={index}>
                 <div className="img" height={300}>
                   <img
-                    src={`/about${list.id + 1}.jpg`}
+                    src={`/about${list.id + 1}.JPG`}
                     alt={list.title}
                     width={350}
                     height={300}
