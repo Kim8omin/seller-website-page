@@ -11,7 +11,7 @@ const Sns = () => {
           <a href="https://www.instagram.com/chelseaion_/">
             <img id="insta" src={insta} alt="instagram" />
           </a>
-          <a href="https://xion.vercel.app/">
+          <a href="https://www.xion.lol/">
             <img id="kakao" src={kakao} alt="kakao" width="10px" />
           </a>
         </div>
