@@ -13,6 +13,7 @@ import { ToggleProvider } from "./context/ToggleContext";
 import Acc from "./pages/products/acc";
 import Goods from "./pages/products/goods";
 import Buckle from "./pages/products/buckle";
+import Admin from "./pages/Admin";
 
 function App() {
   return (
@@ -94,6 +95,7 @@ function App() {
                 }
               />
               <Route path="*" element={<Error />} />
+              <Route path="admin" element={<Admin />} />
             </Routes>
           </Suspense>
         </Router>
