@@ -11,7 +11,7 @@ const Admin = () => {
 
   return (
     <Layer>
-      {password === "abcd" ? (
+      {password === "abcd1997" ? (
         <AdminDataInput />
       ) : (
         <>

@@ -3,10 +3,11 @@ import styled from "styled-components";
 import { addDoc, collection, doc, setDoc } from "firebase/firestore";
 import { db, storage } from "../../firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import { v4 as uuidv4 } from "uuid";
 
 const AdminDataInput = () => {
   const [data, setData] = useState({
-    id: "",
+    id: uuidv4(),
     title: "",
     content: "",
     category: "",
@@ -60,14 +61,14 @@ const AdminDataInput = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await addDoc(collection(db, "products"), {
+      const response = await setDoc(doc(db, "products", data.id), {
         ...data,
       });
       console.log("data:", data);
       console.log("response", response);
       window.alert("data has been stored in database ! ");
       setData({
-        id: "",
+        id: uuidv4(),
         title: "",
         content: "",
         category: "",

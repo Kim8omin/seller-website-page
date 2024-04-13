@@ -47,7 +47,7 @@ function App() {
                 }
               />
               <Route
-                path="productDetails/:productTitle"
+                path="productDetails/:productId"
                 element={
                   <Layout>
                     <ProductDetails />

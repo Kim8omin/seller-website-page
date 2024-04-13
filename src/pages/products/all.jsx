@@ -67,7 +67,7 @@ const All = () => {
         {filteredProducts.map((p) => (
           <div id="item-container" key={p?.id}>
             <Link
-              to={`/productDetails/${p?.title}`}
+              to={`/productDetails/${p?.id}`}
               style={{ textDecoration: "none" }}
             >
               <img src={p?.img} alt="product_img" />
