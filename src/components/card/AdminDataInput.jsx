@@ -4,6 +4,7 @@ import { addDoc, collection, doc, setDoc } from "firebase/firestore";
 import { db, storage } from "../../firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { v4 as uuidv4 } from "uuid";
+import DeleteData from "./DeleteData";
 
 const AdminDataInput = () => {
   const [data, setData] = useState({
@@ -80,47 +81,54 @@ const AdminDataInput = () => {
   };
 
   return (
-    <Layer>
-      <p>fill out the data field below for upload.</p>
-      <form onSubmit={handleSubmit}>
-        <label>
-          title:
-          <input
-            type="text"
-            onChange={handleChange}
-            name="title"
-            value={data.title}
-          />
-        </label>
-        <label>
-          content:
-          <input
-            type="text"
-            onChange={handleChange}
-            name="content"
-            value={data.content}
-          />
-        </label>
-        <label>
-          category:
-          <input
-            type="text"
-            onChange={handleChange}
-            name="category"
-            value={data.category}
-          />
-        </label>
-        <label>
-          img file:
-          <input
-            type="file"
-            onChange={(e) => setFile(e.target.files[0])}
-            name="file"
-          />
-        </label>
-        <button disabled={perc !== null && perc < 100}>submit</button>
-      </form>
-    </Layer>
+    <>
+      <Layer>
+        <InputLayer>
+          <p>fill out the data field below for upload.</p>
+          <form onSubmit={handleSubmit}>
+            <label>
+              title:
+              <input
+                type="text"
+                onChange={handleChange}
+                name="title"
+                value={data.title}
+              />
+            </label>
+            <label>
+              content:
+              <input
+                type="text"
+                onChange={handleChange}
+                name="content"
+                value={data.content}
+              />
+            </label>
+            <label>
+              category:
+              <input
+                type="text"
+                onChange={handleChange}
+                name="category"
+                value={data.category}
+              />
+            </label>
+            <label>
+              img file:
+              <input
+                type="file"
+                onChange={(e) => setFile(e.target.files[0])}
+                name="file"
+              />
+            </label>
+            <span>
+              <button disabled={perc !== null && perc < 100}>submit</button>
+              <button style={{ marginLeft: "15px" }}>manage storage</button>
+            </span>
+          </form>
+        </InputLayer>
+      </Layer>
+    </>
   );
 };
 
@@ -128,12 +136,16 @@ export default AdminDataInput;
 
 const Layer = styled.div`
   display: flex;
+  flex-direction: row;
+  justify-content: evenly;
+`;
+
+const InputLayer = styled.div`
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 20px;
-  margin: auto;
-  height: 100vh;
 
   h2 {
     font-size: 2rem;

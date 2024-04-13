@@ -12,6 +12,8 @@ const All = () => {
     { img: "", title: "", content: "" },
   ]);
 
+  const [error, setError] = useState("");
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -24,30 +26,19 @@ const All = () => {
         console.log(products);
       } catch (error) {
         console.error("Error fetching documents: ", error);
+        setError(error);
       }
     };
 
     fetchData();
   }, []);
-  // useEffect(() => {
-  //   fetch("http://localhost:8001/products")
-  //     .then((response) => {
-  //       return response.json();
-  //     })
-  //     .then((data) => {
-  //       console.log(data);
-  //       setProducts(data);
-  //     })
-  //     .catch((e) => {
-  //       console.log(e);
-  //     });
-  // }, []);
 
   const filteredProducts =
     selectedCategory === "all"
       ? products
       : products?.filter((product) => product?.category === selectedCategory);
 
+  console.log(products);
   return (
     <ProductsWrapper>
       <CategoryButtons>
@@ -64,18 +55,29 @@ const All = () => {
         <button onClick={() => setSelectedCategory("goods")}>| GOODS |</button>
       </CategoryButtons>
       <ItemWrapper>
-        {filteredProducts.map((p) => (
-          <div id="item-container" key={p?.id}>
-            <Link
-              to={`/productDetails/${p?.id}`}
-              style={{ textDecoration: "none" }}
-            >
-              <img src={p?.img} alt="product_img" />
-              <h6>{p?.title}</h6>
-              <p>{p?.content}</p>
-            </Link>
-          </div>
-        ))}
+        {products.length === 1 ? (
+          <>
+            <h2>
+              Failed to fetch data due to daily storage usage limit exceeded.
+            </h2>
+            {error && <p>{error.message}</p>}
+          </>
+        ) : (
+          <>
+            {filteredProducts.map((p) => (
+              <div id="item-container" key={p?.id}>
+                <Link
+                  to={`/productDetails/${p?.id}`}
+                  style={{ textDecoration: "none" }}
+                >
+                  <img src={p?.img} alt="product_img" />
+                  <h6>{p?.title}</h6>
+                  <p>{p?.content}</p>
+                </Link>
+              </div>
+            ))}
+          </>
+        )}
       </ItemWrapper>
     </ProductsWrapper>
   );

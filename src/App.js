@@ -14,6 +14,7 @@ import Acc from "./pages/products/acc";
 import Goods from "./pages/products/goods";
 import Buckle from "./pages/products/buckle";
 import Admin from "./pages/Admin";
+import ManageStorage from "./pages/ManageStorage";
 
 function App() {
   return (
@@ -96,6 +97,7 @@ function App() {
               />
               <Route path="*" element={<Error />} />
               <Route path="admin" element={<Admin />} />
+              <Route path="storage" element={<ManageStorage />} />
             </Routes>
           </Suspense>
         </Router>
