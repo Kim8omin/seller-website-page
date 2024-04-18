@@ -21,13 +21,14 @@ const DeleteData = () => {
     };
 
     fetchData();
-  }, [products]);
+  }, []);
 
   const handleDelete = async (id) => {
     try {
       await deleteDoc(doc(db, "products", id));
       setProducts(products.filter((product) => product.id !== id));
       console.log("Document successfully deleted!");
+      window.alert("Document successfully deleted!");
     } catch (error) {
       console.error("Error removing document: ", error);
     }

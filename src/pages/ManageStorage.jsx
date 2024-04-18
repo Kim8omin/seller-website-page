@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import DeleteData from "../components/card/DeleteData";
 
-const Admin = () => {
+const ManageStorage = () => {
   const [password, setPassword] = useState("");
 
   const handleChange = (e) => {
@@ -24,7 +24,7 @@ const Admin = () => {
   );
 };
 
-export default Admin;
+export default ManageStorage;
 
 const Layer = styled.div`
   display: flex;

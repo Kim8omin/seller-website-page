@@ -123,7 +123,6 @@ const AdminDataInput = () => {
             </label>
             <span>
               <button disabled={perc !== null && perc < 100}>submit</button>
-              <button style={{ marginLeft: "15px" }}>manage storage</button>
             </span>
           </form>
         </InputLayer>
