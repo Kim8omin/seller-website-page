@@ -1,0 +1,106 @@
+{
+    "products": [
+{   "id": 0,
+    "img": "/dataimg/Button.jpeg",
+    "title": "Button",
+    "content":"Button for jeans, jackets and others",
+    "category":"button"
+},
+{   "id": 1,
+    "img": "/dataimg/Button2.jpeg",
+    "title": "Button2",
+    "content":"Button",
+    "category":"button"
+},
+{   "id": 2,
+    "img": "/dataimg/Button3.jpeg",
+    "title": "Button3",
+    "content":"Button",
+    "category":"button"
+},
+{   "id": 3,
+    "img": "/dataimg/Button4.jpeg",
+    "title": "Button4",
+    "content":"Button",
+    "category":"button"
+},
+{   "id": 4,
+    "img": "/dataimg/Buckle.jpeg",
+    "title": "Buckle",
+    "content":"Metal Buckle",
+    "category":"buckle"
+},
+{   "id": 5,
+    "img": "/dataimg/Buckle2.jpeg",
+    "title": "Buckle2",
+    "content":"Metal Buckle",
+    "category":"buckle"
+},
+{   "id": 6,
+    "img": "/dataimg/Buckle3.jpeg",
+    "title": "Buckle3",
+    "content":"Metal Buckle",
+    "category":"buckle"
+},
+{   "id": 7,
+    "img": "/dataimg/Buckle4.jpeg",
+    "title": "Buckle4",
+    "content":"Metal Buckle",
+    "category":"buckle"
+},
+{   "id": 8,
+    "img": "/dataimg/Buckle5.png",
+    "title": "Buckle5",
+    "content":"Plastic Buckle",
+    "category":"buckle"
+},
+{   "id": 9,
+    "img": "/dataimg/Emblem.jpeg",
+    "title": "Emblem",
+    "content":"Metal Emblem",
+    "category":"others"
+},
+{   "id": 10,
+    "img": "/dataimg/Goods.jpeg",
+    "title": "Magnetics",
+    "content":"Goods",
+    "category":"goods"
+},
+{   "id": 11,
+    "img": "/dataimg/Goods2.jpeg",
+    "title": "Tote bag",
+    "content":"Tote bag",
+    "category":"goods"
+},
+{   "id": 12,
+    "img": "/dataimg/Goods3.jpeg",
+    "title": "Tote bag",
+    "content":"Tote bag",
+    "category":"goods"
+},
+{   "id": 13,
+    "img": "/dataimg/Goods4.jpeg",
+    "title": "Tote bag",
+    "content":"Tote bag",
+    "category":"goods"
+},
+{   "id": 14,
+    "img": "/dataimg/Patch.jpeg",
+    "title": "Patch",
+    "content":"Fabric Patch",
+    "category":"others"
+},
+{   "id": 15,
+    "img": "/dataimg/Patch2.jpeg",
+    "title": "Patch2",
+    "content":"Fabric Patch2",
+    "category":"others"
+},
+{   "id": 16,
+    "img": "/dataimg/strap.jpeg",
+    "title": "strap",
+    "content":"strap",
+    "category":"others"
+}
+]
+} 

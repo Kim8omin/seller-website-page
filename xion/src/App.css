@@ -1,0 +1,13 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .app-container {
+    max-width: 1920px;
+    margin: 0 auto;
+    /* 위 코드는 가운데 정렬을 위한 것입니다. */
+    width: 100%;
+    /* 화면 너비를 100%로 설정하여 무한대로 늘어나지 않게 합니다. */
+  }
