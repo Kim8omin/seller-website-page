@@ -17,7 +17,7 @@ const Admin = () => {
         <>
           <h2>Admin Page</h2>
           <p>Enter password to upload the data </p>
-          <input type="text" onChange={handleChange} />
+          <input type="password" onChange={handleChange} />
         </>
       )}
     </Layer>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import { addDoc, collection, doc, setDoc } from "firebase/firestore";
 import { db, storage } from "../../firebase";
@@ -14,9 +14,33 @@ const AdminDataInput = () => {
     category: "",
   });
 
+  const fileRef = useRef();
+
   const [file, setFile] = useState("");
   const [perc, setPerc] = useState(null);
+  const [trigger, setTrigger] = useState(false);
 
+  const addFirebaseContents = async () => {
+    try {
+      const response = await setDoc(doc(db, "products", data.id), {
+        ...data,
+      });
+      console.log("data:", data);
+      console.log("response", response);
+      window.alert("data has been stored in database ! ");
+      setData({
+        id: uuidv4(),
+        title: "",
+        content: "",
+        category: "",
+      });
+      setFile(null);
+      fileRef.current.value = "";
+      setTrigger(false);
+    } catch (e) {
+      console.log("firebase post error", e);
+    }
+  };
   useEffect(() => {
     const uploadFile = () => {
       const storageRef = ref(storage, file.name);
@@ -27,6 +51,9 @@ const AdminDataInput = () => {
         (snapshot) => {
           const progress =
             (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          if (progress === 100) {
+            addFirebaseContents();
+          }
           console.log("Upload is " + progress + "% done");
           setPerc(progress);
           switch (snapshot.state) {
@@ -51,8 +78,10 @@ const AdminDataInput = () => {
         }
       );
     };
-    file && uploadFile();
-  }, [file]);
+    if (file && trigger) {
+      uploadFile();
+    }
+  }, [trigger]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -61,24 +90,13 @@ const AdminDataInput = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      const response = await setDoc(doc(db, "products", data.id), {
-        ...data,
-      });
-      console.log("data:", data);
-      console.log("response", response);
-      window.alert("data has been stored in database ! ");
-      setData({
-        id: uuidv4(),
-        title: "",
-        content: "",
-        category: "",
-      });
-      setFile("");
-    } catch (e) {
-      console.log("firebase post error", e);
+    if (!file) {
+      window.alert("파일을입력하시오");
     }
+    setTrigger(true);
   };
+  console.log(file);
+  console.log(trigger);
 
   return (
     <>
@@ -119,6 +137,7 @@ const AdminDataInput = () => {
                 type="file"
                 onChange={(e) => setFile(e.target.files[0])}
                 name="file"
+                ref={fileRef}
               />
             </label>
             <span>
@@ -203,7 +222,7 @@ const InputLayer = styled.div`
   }
 
   &:disabled {
-    background-color: grey;
+    background-color: gray;
     cursor: not-allowed;
   }
 `;
